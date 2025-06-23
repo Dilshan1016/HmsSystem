@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hospital Appointment Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .form-container {
+      background-color: #fff;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+      padding: 30px;
+      margin: 40px auto;
+      max-width: 900px;
+    }
+    .form-title {
+      font-weight: bold;
+      font-size: 28px;
+      color: #1a1a40;
+    }
+    .form-check-input:checked {
+      background-color: #fd7e14;
+      border-color: #fd7e14;
+    }
+    .btn-slot {
+      margin: 5px;
+      min-width: 70px;
+      border-radius: 6px;
+    }
+    .btn-slot.active {
+      background-color: #fd7e14;
+      color: white;
+      border-color: #fd7e14;
+    }
+
+    .sidebar {
+      height: 100vh;
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 240px;
+      background-color: #1e293b;
+      color: #fff;
+    }
+    .sidebar a {
+      color: #cbd5e1;
+      padding: 12px 20px;
+      display: block;
+      text-decoration: none;
+    }
+    .sidebar a:hover {
+      background-color: #334155;
+      color: #fff;
+    }
+    .sidebar .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      padding: 20px;
+      text-align: center;
+      background-color: #0f172a;
+    }
+    .content {
+      margin-left: 240px;
+      padding: 20px;
+    }
+  </style>
+</head>
+<body>
+
+      <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="logo">🏥 HMS Admin</div>
+    <a href="hospital-dashboard.html"><i class="fas fa-tachometer-alt me-2"></i> Dashboard</a>
+    <a href="patients.html" class="bg-dark"><i class="fas fa-user-injured me-2"></i> Patients</a>
+    <a href="#"><i class="fas fa-user-md me-2"></i> Doctors</a>
+    <a href="#"><i class="fas fa-calendar-check me-2"></i> Appointments</a>
+    <a href="#"><i class="fas fa-cogs me-2"></i> Settings</a>
+  </div>
+
+<div class="form-container">
+  <h3 class="form-title">Make an Appointment</h3>
+
+  <form>
+    <div class="row mt-4">
+      <div class="col-md-6">
+        <label class="form-label">First Name: <span class="text-danger">*</span></label>
+        <input type="text" class="form-control" value="Len">
+      </div>
+      <div class="col-md-6">
+        <label class="form-label">Last Name: <span class="text-danger">*</span></label>
+        <input type="text" class="form-control" value="Brennan">
+      </div>
+      <div class="col-md-6 mt-3">
+        <label class="form-label">Email: <span class="text-danger">*</span></label>
+        <input type="email" class="form-control" value="nicoybuli@gmail.com">
+      </div>
+      <div class="col-md-3 mt-3">
+        <label class="form-label">Password: <span class="text-danger">*</span></label>
+        <input type="password" class="form-control" value="*****">
+      </div>
+      <div class="col-md-3 mt-3">
+        <label class="form-label">Confirm Password: <span class="text-danger">*</span></label>
+        <input type="password" class="form-control" value="*****">
+      </div>
+      <div class="col-md-6 mt-3">
+        <label class="form-label">Doctor Department: <span class="text-danger">*</span></label>
+        <select class="form-select">
+          <option selected>Allergists</option>
+          <option>Cardiologists</option>
+          <option>Dermatologists</option>
+        </select>
+      </div>
+      <div class="col-md-6 mt-3">
+        <label class="form-label">Doctor: <span class="text-danger">*</span></label>
+        <select class="form-select">
+          <option selected>Steven Lyon</option>
+          <option>Dr. Smith</option>
+        </select>
+      </div>
+      <div class="col-md-6 mt-3">
+        <label class="form-label">Date: <span class="text-danger">*</span></label>
+        <input type="date" class="form-control" value="2022-07-28">
+      </div>
+      <div class="col-md-6 mt-3">
+        <label class="form-label d-block">Gender: <span class="text-danger">*</span></label>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="gender" id="male" checked>
+          <label class="form-check-label" for="male">Male</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="gender" id="female">
+          <label class="form-check-label" for="female">Female</label>
+        </div>
+      </div>
+      <div class="col-md-12 mt-3">
+        <label class="form-label">Description:</label>
+        <textarea class="form-control" rows="2" placeholder="Enter Description"></textarea>
+      </div>
+      <div class="col-md-12 mt-4">
+        <p><i class="bi bi-calendar3"></i> <strong>Thursday [00:01 - 18:18]</strong></p>
+        <p class="fw-bold">Available Slots:</p>
+        <div>
+          <!-- You can dynamically generate these slots with a loop in backend -->
+          <button type="button" class="btn btn-outline-secondary btn-slot">00:01</button>
+          <button type="button" class="btn btn-outline-secondary btn-slot">00:21</button>
+          <button type="button" class="btn btn-outline-secondary btn-slot">00:41</button>
+          <button type="button" class="btn btn-slot active">01:01</button>
+          <button type="button" class="btn btn-outline-secondary btn-slot">01:21</button>
+          <button type="button" class="btn btn-outline-secondary btn-slot">01:41</button>
+          <button type="button" class="btn btn-outline-secondary btn-slot">02:01</button>
+          <button type="button" class="btn btn-outline-secondary btn-slot">02:21</button>
+          <button type="button" class="btn btn-outline-secondary btn-slot">02:41</button>
+          <button type="button" class="btn btn-outline-secondary btn-slot">03:01</button>
+          <button type="button" class="btn btn-outline-secondary btn-slot">03:21</button>
+          <button type="button" class="btn btn-outline-secondary btn-slot">03:41</button>
+        </div>
+      </div>
+    </div>
+
+
+    
+    <div class="mt-4 text-end">
+      <button type="submit" class="btn btn-primary">Submit Appointment</button>
+    </div>
+  </form>
+</div>
+
+ <!-- Content -->
+  <div class="content">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+      <h2>Appoiments</h2>
+    
+    </div>
+
+    <div class="card shadow-sm border-0">
+      <div class="card-body">
+        <div class="table-responsive">
+          <table class="table table-hover align-middle">
+            <thead class="table-light">
+              <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Id No</th>
+                <th>Gender</th>
+                <th>Condition</th>
+                <th>Admit Date</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>Viraj Harshana</td>
+                <td>45</td>
+                <td>4252512125421</td>
+                <td>Male</td>
+                <td>Cardiac Arrest</td>
+                <td>2025-06-15</td>
+                <td>
+                  <a href="#" class="btn btn-sm btn-info">View</a>
+                  <a href="#" class="btn btn-sm btn-warning">Edit</a>
+                  <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Dilshan Priyankara</td>
+                <td>30</td>
+                <td>2252555244454</td>
+                <td>Female</td>
+                <td>Diabetes</td>
+                <td>2025-06-20</td>
+                <td>
+                  <a href="#" class="btn btn-sm btn-info">View</a>
+                  <a href="#" class="btn btn-sm btn-warning">Edit</a>
+                  <a href="#" class="btn btn-sm btn-danger">Delete</a>
+                </td>
+              </tr>
+              <!-- Add more rows as needed -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
