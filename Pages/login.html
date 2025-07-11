@@ -70,15 +70,15 @@
   <h4>Hospital Login Portal</h4>
   <p class="mb-4 text-muted">For Admin Staff</p>
 
-  <form>
+  <form action="login.php" method="post">
     <div class="mb-3 text-start">
       <label for="username" class="form-label">Username </label>
-      <input type="text" class="form-control" id="username" placeholder="Enter your ID or email" required />
+      <input type="text" class="form-control" id="username" name="username" placeholder="Enter your ID or email" required />
     </div>
 
     <div class="mb-3 text-start">
       <label for="password" class="form-label">Password</label>
-      <input type="password" class="form-control" id="password" placeholder="••••••••" required />
+      <input type="password" class="form-control" id="password" name="password" placeholder="password" required />
     </div>
 
     
