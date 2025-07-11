@@ -10,6 +10,17 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
  
+  <style>
+    /* Sidebar collapse styles example */
+    .sidebar {
+      width: 220px;
+      transition: width 0.3s ease;
+      overflow: hidden;
+    }
+    .sidebar.collapsed {
+      width: 60px;
+    }
+  </style>
 </head>
 <body>
 
@@ -18,11 +29,11 @@
     <div class="logo" id="logoText">🏥 HMS Admin</div>
     <a href="hospital-dashboard.html"><i class="fas fa-tachometer-alt me-2"></i> Dashboard</a>
     <a href="patients.html"><i class="fas fa-user-injured me-2"></i> Patients</a>
-    <a href="docters.html"><i class="fas fa-user-md me-2"></i> Doctors</a>
-    <a href="appoments.html"><i class="fas fa-calendar-check me-2"></i> Appointments</a>
-    <a href="#"><i class="fas fa-file-medical me-2"></i> Records</a>
-    <a href="#"><i class="fas fa-cogs me-2"></i> Settings</a>
-    <a href="#"><i class="fas fa-sign-out-alt me-2"></i> Logout</a>
+    <a href="doctors.html"><i class="fas fa-user-md me-2"></i> Doctors</a>
+    <a href="appointments.html"><i class="fas fa-calendar-check me-2"></i> Appointments</a>
+    <a href=""><i class="fas fa-file-medical me-2"></i> Records</a>
+    <a href="setting.html"><i class="fas fa-cogs me-2"></i> Settings</a>
+    <a href="login.html"><i class="fas fa-sign-out-alt me-2"></i> Logout</a>
   </div>
 
   <!-- Main Content -->
@@ -35,7 +46,7 @@
         </button>
         <span class="navbar-brand">Dashboard</span>
         <div class="ms-auto d-flex align-items-center">
-          <span class="me-3">Welcome, Admin</span>
+          <span class="me-3" id="usernameDisplay">Welcome, Admin</span>
           <img src="img01.png" class="rounded-circle" alt="Admin Avatar" style="width: 40px; height: 40px;">
         </div>
       </div>
@@ -161,6 +172,13 @@
         logoText.innerHTML = "🏥 HMS Admin";
       }
     });
+
+    // Set logged-in username dynamically here
+    const loggedInUser = "JohnDoe"; // Replace with actual logged-in user value
+    const usernameDisplay = document.getElementById("usernameDisplay");
+    if (usernameDisplay) {
+      usernameDisplay.textContent = `Welcome, ${loggedInUser}`;
+    }
   </script>
 </body>
 </html>

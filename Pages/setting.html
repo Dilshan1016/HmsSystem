@@ -110,33 +110,19 @@
     <div class="col-12">
       <div class="card shadow-sm p-4">
         <div class="section-title">Add New User</div>
-        <form>
+
+        <form action="register.php" method="post">
           <div class="row g-3">
             <div class="col-md-4">
-              <label class="form-label">Full Name</label>
-              <input type="text" class="form-control" placeholder="User Name">
+              <label class="form-label">Username</label>
+              <input type="text" class="form-control" name="username" placeholder="User Name">
             </div>
-            <div class="col-md-4">
-              <label class="form-label">Email</label>
-              <input type="email" class="form-control" placeholder="user@example.com">
-            </div>
-            <div class="col-md-4">
-              <label class="form-label">Role</label>
-              <select class="form-select">
-                <option selected>Doctor</option>
-                <option>Nurse</option>
-                <option>Receptionist</option>
-                <option>Administrator</option>
-              </select>
-            </div>
+         
             <div class="col-md-6">
               <label class="form-label">Password</label>
-              <input type="password" class="form-control" placeholder="••••••••">
+              <input type="password" class="form-control" name="password" placeholder="••••••••">
             </div>
-            <div class="col-md-6">
-              <label class="form-label">Confirm Password</label>
-              <input type="password" class="form-control" placeholder="••••••••">
-            </div>
+           
             <div class="col-12">
               <button type="submit" class="btn btn-success">Create User</button>
             </div>
